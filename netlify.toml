@@ -1,10 +1,10 @@
 # Netlify configuration for this Angular project
 # Build command uses the npm script defined in package.json ("build" -> "ng build").
-# Publish directory matches the `outputPath` from angular.json ("./dist").
+# Publish directory matches the Angular build output; use `dist/browser` which contains index.html.
 
 [build]
   command = "npm run build"
-  publish = "dist"
+  publish = "dist/browser"
 
 # Ensure single-page-app routing works by redirecting all requests to index.html
 [[redirects]]
@@ -17,4 +17,3 @@
 #[context.production.environment]
 #  NODE_ENV = "production"
 #  # Example: API_URL = "https://api.example.com"
-
