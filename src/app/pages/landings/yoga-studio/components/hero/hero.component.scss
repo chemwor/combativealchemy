@@ -1,0 +1,24 @@
+@import 'swiper/css';
+
+/* Hero background: desktop by default, swap to mobile image below 768px */
+.swiper-slide-cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* use absolute path so the bundler can resolve the asset */
+  background-image: url('/assets/img/landing/yoga-studio/hero/kidboxing.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 0;
+}
+
+@media (max-width: 767.98px) {
+  .swiper-slide-cover {
+    /* swap to the mobile-optimized image on small viewports */
+    background-image: url('/assets/img/landing/yoga-studio/hero/mobileboxer.jpg');
+    background-position: center;
+  }
+}

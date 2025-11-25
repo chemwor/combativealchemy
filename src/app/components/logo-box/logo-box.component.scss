@@ -1,0 +1,37 @@
+/* logo-box.component.scss
+   Ensure the external ca.svg takes up the same space and alignment
+   as the original inline SVG (35x32). This prevents parent rules from
+   overriding sizing and alignment.
+*/
+:host {
+  display: inline-block;
+}
+
+a.navbar-brand {
+  display: inline-flex;
+  align-items: center;
+}
+
+a.navbar-brand .text-primary,
+ a.navbar-brand .text-white {
+  display: inline-flex;
+  align-items: center;
+}
+
+/* Ensure `.text-white` inside this component is actually white even
+   if a global utility is missing or overridden. Use high specificity
+   and !important to prevent parent rules from changing it. */
+a.navbar-brand .text-white {
+  color: #ffffff !important;
+}
+
+/* Force the image to use exact pixel size and not be constrained
+   or stretched by parent rules. Use !important to override global rules. */
+a.navbar-brand .logo-img {
+  width: 35px !important;
+  height: 32px !important;
+  max-width: none !important;
+  display: inline-block;
+  vertical-align: middle;
+  object-fit: contain;
+}

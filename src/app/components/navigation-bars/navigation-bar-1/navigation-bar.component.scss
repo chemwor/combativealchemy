@@ -1,0 +1,42 @@
+/* Component-scoped styles for navigation bar: make nav items white */
+:host {
+  .navbar {
+    /* Ensure all links and nav items are white */
+    a.nav-link,
+    a,
+    .nav-link,
+    .btn,
+    .ai,
+    i {
+      color: #fff !important;
+      fill: #fff !important; /* for svg icons that use currentColor */
+    }
+
+    /* Outline buttons often use primary color; force white text for consistency */
+    .btn-outline-primary {
+      color: #fff !important;
+      border-color: rgba(255, 255, 255, 0.18) !important;
+    }
+
+    /* Keep hover/focus white as well */
+    a.nav-link:hover,
+    a:hover,
+    .btn:hover,
+    .btn:focus,
+    .nav-link:focus {
+      color: #fff !important;
+      text-decoration: none;
+    }
+
+    /* Ensure the 'Book now' link shows white text even if theme classes try to override */
+    .btn-primary {
+      color: #fff !important;
+    }
+
+    /* Theme switcher / icons */
+    .mode-switch {
+      color: #fff !important;
+    }
+  }
+}
+
