@@ -1,26 +1,30 @@
-# Around
+# Combative Alchemy
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.1.3.
+A powerful Angular application for Combative Alchemy - an elite fitness training company specializing in combat sports and comprehensive fitness programs.
+
+## About
+
+Combative Alchemy is a premier fitness training company that offers a unique blend of combative training and general fitness programs. Whether you're a complete beginner looking to get in shape or an experienced athlete wanting to enhance your combat skills, our expert coaches provide personalized training to help you reach your fitness goals.
 
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## Training Programs
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- **Combat Training**: Boxing, kickboxing, MMA, martial arts, and self-defense classes
+- **General Fitness**: Strength training, cardio, flexibility, and conditioning programs
+- **Personal Training**: One-on-one coaching tailored to your specific fitness goals
+- **Group Classes**: High-energy fitness sessions for all skill levels
 
 ## Build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Running unit tests
+## Running tests
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
 ## Further help
 
