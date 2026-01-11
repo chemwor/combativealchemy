@@ -15,7 +15,43 @@
       Book now
     </a>
 
-    <vertical-menu-button (click)="toggleMenu()"></vertical-menu-button>
+    <ng-template #offcanvasContent let-offcanvas>
+      <div class="offcanvas-header border-bottom">
+        <component-logo-box />
+        <button
+          (click)="closeOffcanvas()"
+          class="btn-close"
+          type="button"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="navbar-nav flex-column p-0">
+          @for (item of navigationItems; track item.name) {
+            <li class="nav-item px-0">
+              <a
+                class="nav-link px-0"
+                [href]="item.link"
+                (click)="closeOffcanvas()"
+              >
+                {{ item.name }}
+              </a>
+            </li>
+          }
+        </ul>
+      </div>
+    </ng-template>
+
+    <button
+      class="navbar-toggler ms-sm-3"
+      [attr.aria-expanded]="isOffcanvasOpen"
+      (click)="openOffcanvas(offcanvasContent)"
+      type="button"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
     <nav
       class="collapse navbar-collapse"

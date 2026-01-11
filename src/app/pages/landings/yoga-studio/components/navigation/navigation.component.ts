@@ -6,11 +6,11 @@ import {
   OnInit,
   OnDestroy,
   Renderer2,
+  TemplateRef,
   inject,
 } from '@angular/core'
-import { VerticalMenuButtonComponent } from '@components/app-menu/vertical-menu-button.component'
 import { LogoBoxComponent } from '@components/logo-box/logo-box.component'
-import { NgbCollapseModule } from '@ng-bootstrap/ng-bootstrap'
+import { NgbCollapseModule, NgbOffcanvas } from '@ng-bootstrap/ng-bootstrap'
 import { ThemeSwitcherComponent } from '@components/navigation-bars/components/theme-switcher/theme-switcher.component'
 import { ThemeModeService } from '@core/services/theme-mode.service'
 import { Subscription } from 'rxjs'
@@ -23,7 +23,6 @@ import { buyLink } from 'src/app/states/constants'
     LogoBoxComponent,
     ThemeSwitcherComponent,
     NgbCollapseModule,
-    VerticalMenuButtonComponent,
   ],
   templateUrl: './navigation.component.html',
   styleUrls: ['./navigation.component.scss'],
@@ -38,7 +37,10 @@ export class YogaStudioNavigationComponent implements OnInit, OnDestroy {
 
   private elementRef = inject(ElementRef)
   private renderer = inject(Renderer2)
+  private offcanvasService = inject(NgbOffcanvas)
   private themeSubscription!: Subscription
+
+  isOffcanvasOpen: boolean = false
 
   navigationItems = [
     { name: 'Home', link: '#home' },
@@ -100,6 +102,22 @@ export class YogaStudioNavigationComponent implements OnInit, OnDestroy {
         this.isSticky = false;
       }
     }
+  }
+
+  /**
+   * Open mobile offcanvas menu
+   */
+  openOffcanvas(content: TemplateRef<any>) {
+    this.offcanvasService.open(content, { position: 'end', backdrop: false });
+    this.isOffcanvasOpen = true;
+  }
+
+  /**
+   * Close mobile offcanvas menu
+   */
+  closeOffcanvas() {
+    this.offcanvasService.dismiss();
+    this.isOffcanvasOpen = false;
   }
 
   /**
