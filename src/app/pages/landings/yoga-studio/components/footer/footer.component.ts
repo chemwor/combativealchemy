@@ -13,5 +13,11 @@ import { createdBy, developedByLink } from 'src/app/states/constants'
 export class FooterComponent {
   author = createdBy
   developBy = developedByLink
-  about = ['Classes', 'Trainers', 'Schedule', 'Pricing', 'Contact']
+  about = [
+    { name: 'Home', link: '#home' },
+    { name: 'Why Us', link: '#features' },
+    { name: 'Classes', link: '#classes' },
+    { name: 'Pricing', link: '#pricing' },
+    { name: 'Contact', link: 'https://app.acuityscheduling.com/schedule/54daf7b5' }
+  ]
 }

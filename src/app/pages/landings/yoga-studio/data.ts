@@ -46,43 +46,43 @@ export type CalendarType = {
 export const advantages: AdvantagesType[] = [
   {
     title: 'Personalized Training',
-    image: 'assets/img/landing/yoga-studio/features/spa-area.jpg',
-    icon_class: 'ai-spa',
+    image: 'assets/img/landing/yoga-studio/features/personalized.jpg',
+    icon_class: 'ai-user-check',
     description:
       'Every session is tailored to your goals, fitness level, and pace—so you progress with confidence, not pressure.',
   },
   {
     title: 'Flexible Session',
-    image: 'assets/img/landing/yoga-studio/features/changing-room.jpg',
-    icon_class: 'ai-towel',
+    image: 'assets/img/landing/yoga-studio/features/flexible.jpg',
+    icon_class: 'ai-time',
     description:
       'Choose from 30- or 60-minute sessions, individual or group formats, and pay-as-you-go or package plans built around your schedule.',
   },
   {
     title: 'Adaptive Coaching',
-    image: 'assets/img/landing/yoga-studio/features/free-lessons.jpg',
-    icon_class: 'ai-flower',
+    image: 'assets/img/landing/yoga-studio/features/coach.jpg',
+    icon_class: 'ai-target',
     description:
       'A 30-minute consultation ensures you get a clear path forward and a coach who understands your needs from day one.',
   },
   {
     title: 'Affordable',
-    image: 'assets/img/landing/yoga-studio/features/lounge-cafe.jpg',
-    icon_class: 'ai-cafe',
+    image: 'assets/img/landing/yoga-studio/features/afordable.jpg',
+    icon_class: 'ai-dollar',
     description:
       'No hidden fees—just simple options with clear timelines and multiple payment methods (Zelle, Venmo, Cash App).',
   },
   {
     title: 'Real Results',
-    image: 'assets/img/landing/yoga-studio/features/bright-halls.jpg',
-    icon_class: 'ai-sofa',
+    image: 'assets/img/landing/yoga-studio/features/results.jpg',
+    icon_class: 'ai-activity',
     description:
       'Whether you\'re training for fitness, technique, confidence, or discipline, every session is centered around measurable improvement.',
   },
   {
     title: 'Growth Environment',
-    image: 'assets/img/landing/yoga-studio/features/free-rugs.jpg',
-    icon_class: 'ai-rug',
+    image: 'assets/img/landing/yoga-studio/features/growth.jpg',
+    icon_class: 'ai-award',
     description:
       'You’re not just signing up for training—you’re joining the C.A. family, where accountability, motivation, and personal evolution come first.',
   },

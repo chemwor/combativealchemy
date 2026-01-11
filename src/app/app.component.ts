@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core'
 import { RouterOutlet } from '@angular/router'
 import { BackToTopComponent } from '@components/back-to-top/back-to-top.component'
-import { CustomizerComponent } from '@components/customizer/customizer.component'
 import { PreloaderComponent } from '@components/preloader/preloader.component'
 import { TitleService } from '@core/services/title.service'
 
@@ -12,7 +11,6 @@ import { TitleService } from '@core/services/title.service'
     RouterOutlet,
     PreloaderComponent,
     BackToTopComponent,
-    CustomizerComponent,
   ],
   templateUrl: './app.component.html',
 })

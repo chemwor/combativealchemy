@@ -1,0 +1,41 @@
+<header class="navbar navbar-expand-lg fixed-top" [attr.data-bs-theme]="currentTheme" id="navbar">
+  <div class="container">
+    <component-logo-box [className]="'pe-sm-3'" />
+
+    <app-theme-switcher
+      class="form-check form-switch mode-switch order-lg-2 me-3 me-lg-4 ms-auto"
+    />
+
+    <a
+      class="btn btn-primary btn-sm fs-sm order-lg-3 d-none d-sm-inline-flex"
+      [href]="buyLink"
+      target="_blank"
+      rel="noopener"
+    >
+      Book now
+    </a>
+
+    <vertical-menu-button (click)="toggleMenu()"></vertical-menu-button>
+
+    <nav
+      class="collapse navbar-collapse"
+      #collapse="ngbCollapse"
+      [(ngbCollapse)]="isMenuCollapsed"
+      id="navbarNav"
+    >
+      <ul class="navbar-nav me-auto">
+        @for (item of navigationItems; track item.name) {
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              [href]="item.link"
+              (click)="isMenuCollapsed = true"
+            >
+              {{ item.name }}
+            </a>
+          </li>
+        }
+      </ul>
+    </nav>
+  </div>
+</header>

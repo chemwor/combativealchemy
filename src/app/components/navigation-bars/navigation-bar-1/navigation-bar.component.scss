@@ -1,7 +1,7 @@
-/* Component-scoped styles for navigation bar: make nav items white */
+/* Component-scoped styles for navigation bar */
 :host {
   .navbar {
-    /* Ensure all links and nav items are white */
+    /* Default state - white text for nav items over hero images */
     a.nav-link,
     a,
     .nav-link,
@@ -36,6 +36,70 @@
     /* Theme switcher / icons */
     .mode-switch {
       color: #fff !important;
+    }
+
+    /* Logo text styling - red for brand consistency and visibility */
+    .navbar-brand {
+      color: #B51D1B !important;
+    }
+
+    /* When navbar is stuck (scrolled), use theme-appropriate colors */
+    &.navbar-stuck {
+      /* Light mode - black text on white background */
+      a.nav-link,
+      a,
+      .nav-link,
+      .ai,
+      i {
+        color: #000 !important;
+        fill: #000 !important;
+      }
+
+      .btn-outline-primary {
+        color: #000 !important;
+        border-color: rgba(0, 0, 0, 0.18) !important;
+      }
+
+      a.nav-link:hover,
+      a:hover,
+      .btn:hover,
+      .btn:focus,
+      .nav-link:focus {
+        color: #000 !important;
+      }
+
+      .mode-switch {
+        color: #000 !important;
+      }
+    }
+
+    /* Dark mode - white text on black background when stuck */
+    &.navbar-dark.navbar-stuck {
+      a.nav-link,
+      a,
+      .nav-link,
+      .ai,
+      i {
+        color: #fff !important;
+        fill: #fff !important;
+      }
+
+      .btn-outline-primary {
+        color: #fff !important;
+        border-color: rgba(255, 255, 255, 0.18) !important;
+      }
+
+      a.nav-link:hover,
+      a:hover,
+      .btn:hover,
+      .btn:focus,
+      .nav-link:focus {
+        color: #fff !important;
+      }
+
+      .mode-switch {
+        color: #fff !important;
+      }
     }
   }
 }

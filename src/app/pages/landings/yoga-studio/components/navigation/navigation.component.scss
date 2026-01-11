@@ -1,0 +1,134 @@
+// Custom navigation styles for yoga studio
+.navbar {
+  transition: all 0.3s ease-in-out;
+
+  // Default transparent background
+  background-color: transparent;
+
+  // Scrolled state with background
+  &.navbar-stuck {
+    backdrop-filter: blur(20px);
+    background-color: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.1);
+
+    // Dark mode scrolled background - BLACK instead of grey
+    &[data-bs-theme="dark"] {
+      background-color: rgba(0, 0, 0, 0.95) !important;
+      box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.5);
+    }
+  }
+
+  // Dark mode fixes - BLACK background with WHITE text
+  &[data-bs-theme="dark"] {
+    // Force all navigation text to be white
+    .navbar-brand,
+    .nav-link,
+    .navbar-nav .nav-link {
+      color: #ffffff !important;
+
+      &:hover,
+      &:focus {
+        color: var(--ar-primary) !important;
+      }
+    }
+
+    // Logo and CA text should be white in dark mode - multiple selectors for coverage
+    component-logo-box,
+    component-logo-box a,
+    component-logo-box a.navbar-brand,
+    component-logo-box a.navbar-brand *,
+    component-logo-box * {
+      color: #ffffff !important;
+    }
+
+    // Book now button styling in dark mode
+    .btn-primary {
+      background-color: var(--ar-primary);
+      border-color: var(--ar-primary);
+      color: #ffffff;
+    }
+
+    // When scrolled in dark mode, keep white text on black background
+    &.navbar-stuck {
+      background-color: rgba(0, 0, 0, 0.95) !important;
+
+      .navbar-brand,
+      .nav-link,
+      .navbar-nav .nav-link {
+        color: #ffffff !important;
+
+        &:hover,
+        &:focus {
+          color: var(--ar-primary) !important;
+        }
+      }
+
+      component-logo-box,
+      component-logo-box a,
+      component-logo-box a.navbar-brand,
+      component-logo-box a.navbar-brand *,
+      component-logo-box * {
+        color: #ffffff !important;
+      }
+    }
+  }
+
+  // Light mode - WHITE background with BLACK text when scrolled
+  &[data-bs-theme="light"] {
+    .navbar-brand,
+    .nav-link {
+      color: #ffffff;
+
+      &:hover,
+      &:focus {
+        color: var(--ar-primary);
+      }
+    }
+
+    // Logo and CA text should be white by default in light mode - higher specificity
+    component-logo-box a.navbar-brand,
+    component-logo-box a.navbar-brand *,
+    .navbar-brand {
+      color: #ffffff !important;
+    }
+
+    // When scrolled in light mode, text should be dark on white background
+    &.navbar-stuck {
+      .navbar-brand,
+      .nav-link {
+        color: #212529 !important;
+
+        &:hover,
+        &:focus {
+          color: var(--ar-primary) !important;
+        }
+      }
+
+      component-logo-box a.navbar-brand,
+      component-logo-box a.navbar-brand *,
+      .navbar-brand {
+        color: #212529 !important;
+      }
+    }
+  }
+
+  .nav-link {
+    font-weight: 500;
+    transition: color 0.25s ease-in-out;
+
+    &.active {
+      color: var(--ar-primary) !important;
+    }
+  }
+
+  // Mobile menu button styling
+  .navbar-toggler {
+    border: none;
+    padding: 0.25rem 0.5rem;
+
+    &:focus {
+      box-shadow: none;
+    }
+  }
+}
+
